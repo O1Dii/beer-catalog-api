@@ -7,4 +7,6 @@ __pycache__
 /_build/
 .idea
 db.*
+.env1
 .env
+temp.*

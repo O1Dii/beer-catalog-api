@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  beer_catalog:
+    build: ./
+    ports:
+      - 8000:80
+    command: ./docker_run_commands.sh
+    volumes:
+      - .:/beer_catalog_api
+    networks:
+      - db_network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12.0
+    networks:
+      - db_network
+
+networks:
+  db_network:
+    driver: bridge
