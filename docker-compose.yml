@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  beer_catalog:
+    env_file:
+      - .env
+    build: ./
+    ports:
+      - 8000:80
+    command: pipenv run python run.py
+    volumes:
+      - .:/beer_catalog_api
+    networks:
+      - db_network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12.0
+    networks:
+      - db_network
+
+networks:
+  db_network:
+    driver: bridge
