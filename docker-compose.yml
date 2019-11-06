@@ -2,12 +2,10 @@ version: '3'
 
 services:
   beer_catalog:
-    env_file:
-      - .env
     build: ./
     ports:
       - 8000:80
-    command: pipenv run python run.py
+    command: ./docker_run_commands.sh
     volumes:
       - .:/beer_catalog_api
     networks:

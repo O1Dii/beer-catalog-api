@@ -11,6 +11,11 @@ flask = "*"
 flask-sqlalchemy = "*"
 psycopg2 = "*"
 requests = "*"
+marshmallow = "*"
+flask-marshmallow = "*"
+marshmallow-sqlalchemy = "*"
+python-dotenv = "*"
+flask-cors = "*"
 
 [requires]
 python_version = "3.8"
